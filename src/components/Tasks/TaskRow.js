@@ -8,5 +8,8 @@ export const TaskRow = props =>(
                 checked={props.task.done} 
                 onChange={()=> props.toggleTask(props.task)}
             /></td>
+            <td>
+                <button onClick={()=> props.deleteTask(props.task)}>Delete</button>
+            </td>
         </tr> 
 );

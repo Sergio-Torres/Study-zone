@@ -7,11 +7,7 @@ import {VisibilityControl} from './Control';
 function Tasks(){
 
     const[userName, setUserName]=useState('sergio');
-    const[taskItems, setTaskItems] = useState([
-        {name: 'Task on', done: false},
-        {name: 'Task 2', done: false},
-        {name: 'Task 3', done: false}
-    ]);
+    const[taskItems, setTaskItems] = useState([]);
     
     const [showCompleted, setShowCompleted] = useState(true);
     
@@ -23,9 +19,7 @@ function Tasks(){
         else{
             setUserName('Sergio Local')
             setTaskItems([
-                {name: 'tasa', done: false},
-                {name: 'Tarea2', done: false},
-                {name: 'Tarea 3', done: false}
+                {name: 'Task Example', done: false}
             ])
             setShowCompleted(true)
         }
@@ -42,16 +36,27 @@ function Tasks(){
         }
     }
 
+    const deleteTask = task =>{
+        const newTaskItems = [...taskItems];
+        const Itask = newTaskItems.findIndex(i => i === task);
+        newTaskItems.splice(Itask,1);
+        setTaskItems(newTaskItems);
+    };
+
+
     /*It searches the array of tasks for one that matches, if it finds
      it, change its value (true to false or false to true)*/
-    const  toggleTask = task =>
+    const toggleTask = task=>
         setTaskItems(taskItems.map(t=>(t.name === task.name ? {...t, done: !t.done} : t )));
 
     const TaskTableRows = (doneValue)=>
         taskItems
             .filter(task => task.done === doneValue)
             .map(task =>(
-                <TaskRow task={task} key={task.name} toggleTask={toggleTask}/>
+                <TaskRow task={task} key={task.name} 
+                toggleTask={toggleTask}
+                deleteTask={deleteTask}
+                />
     ));
     
     return(

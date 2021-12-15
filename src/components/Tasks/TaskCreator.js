@@ -9,7 +9,7 @@ export const TaskCreator = props =>{
     const createNewTask = () =>{
         props.callback(newTaskName);
         setNewTaskName('');
-    }
+    };
 
     return(
         <div className="my-1">
