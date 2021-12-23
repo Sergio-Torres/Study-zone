@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 export const NoteCreator = props =>{
         
-    const [newNote, setNewNote] = useState('Please enter your note');
+    const [newNote, setNewNote] = useState('');
 
     const updateNewNote = e => setNewNote(e.target.value);
 
@@ -16,10 +16,11 @@ export const NoteCreator = props =>{
             <input 
                 type="text"
                 className="form-control"
-                value={newNote}
+               value={newNote}
                 onChange={updateNewNote}
             />
             <button className="btn" onClick={createNewNote}>
+
                 add
             </button>
         </div>

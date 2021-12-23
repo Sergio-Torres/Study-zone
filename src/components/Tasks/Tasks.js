@@ -30,13 +30,14 @@ function Tasks(){
         localStorage.setItem('tasks', JSON.stringify(taskItems));
     },[taskItems]);
 
-    const createNewTask = taskName =>{
+    const createNewTask = taskName =>{   
         if(!taskItems.find(t=>t.name ===taskName)){
             setTaskItems([...taskItems, {name: taskName, done: false}])
         }
     }
 
     const deleteTask = task =>{
+        console.log(task);
         const newTaskItems = [...taskItems];
         const Itask = newTaskItems.findIndex(i => i === task);
         newTaskItems.splice(Itask,1);

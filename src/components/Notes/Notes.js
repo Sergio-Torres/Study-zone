@@ -4,24 +4,37 @@ import {NoteList} from './NoteList';
 
 function Notes(){
     const[noteItems, setNotesItems] = useState([
+        {name: 'nota numero 1'},
+        {name: 'nota numero 2'},
+        {name: 'nota numero 3'}
     ]);
 
     const createNewNote = noteName =>{
         if(!noteItems.find(n=>n.name===noteName)){
             setNotesItems([...noteItems, {name: noteName}]);
-//            DisplayNoteList({name: noteName});
-        }
-    }
-    const DisplayNoteList = note=>{
-        return (
-            noteItems.map((n)=>(
-                <NoteList note={n.name} key={note.name}/>
-            ))
 
+        }
+    }  
+    
+    const deleteNote= note =>{
+        const newNoteItems = [...noteItems];
+        newNoteItems.forEach(function(element,index){
+            if(element.name===note){
+                newNoteItems.splice(index,1);
+            }
+        });
+        setNotesItems(newNoteItems);
+    };
+
+    const DisplayNoteList =()=>{
+        return (
+            noteItems.map(note=>(
+                <NoteList note={note.name} key={note.name}
+                deleteNote={deleteNote}/>
+            ))
         )
     }
 
-    
     return(
         <div>
             <NoteCreator callback={createNewNote}/>
@@ -34,5 +47,3 @@ function Notes(){
 }
 
 export default Notes;
-
-
