@@ -15,14 +15,11 @@ function Notes(){
 
         }
     }  
-    
+   
     const deleteNote= note =>{
         const newNoteItems = [...noteItems];
-        newNoteItems.forEach(function(element,index){
-            if(element.name===note){
-                newNoteItems.splice(index,1);
-            }
-        });
+        const idNote = newNoteItems.findIndex(i=>i.name===note);
+        newNoteItems.splice(idNote,1);          
         setNotesItems(newNoteItems);
     };
 
@@ -30,7 +27,9 @@ function Notes(){
         return (
             noteItems.map(note=>(
                 <NoteList note={note.name} key={note.name}
-                deleteNote={deleteNote}/>
+                deleteNote={deleteNote}
+                editNote={editNote}
+                />
             ))
         )
     }
