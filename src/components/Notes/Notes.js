@@ -4,9 +4,7 @@ import {NoteList} from './NoteList';
 
 function Notes(){
     const[noteItems, setNotesItems] = useState([
-        {name: 'nota numero 1'},
-        {name: 'nota numero 2'},
-        {name: 'nota numero 3'}
+        {name: 'nota numero 1'}       
     ]);
 
     const createNewNote = noteName =>{
@@ -15,7 +13,7 @@ function Notes(){
 
         }
     }  
-   
+    
     const deleteNote= note =>{
         const newNoteItems = [...noteItems];
         const idNote = newNoteItems.findIndex(i=>i.name===note);
@@ -28,7 +26,7 @@ function Notes(){
             noteItems.map(note=>(
                 <NoteList note={note.name} key={note.name}
                 deleteNote={deleteNote}
-                editNote={editNote}
+               
                 />
             ))
         )

@@ -10,6 +10,7 @@ function App() {
     <div>
       <Tasks/>
       <Notes/>
+      <PomodoroClock/>
     </div>
     
   );

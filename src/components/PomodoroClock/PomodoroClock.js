@@ -1,10 +1,11 @@
 import React from 'react';
-//import {SessionTime} from './SessionTime';
+import StudySession from './StudySession';
 
 function PomodoClock(){
+
     return(
         <div>
-            hola
+           <StudySession/> 
         </div>
 
     );

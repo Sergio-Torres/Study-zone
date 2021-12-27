@@ -44,9 +44,6 @@ function Tasks(){
         setTaskItems(newTaskItems);
     };
 
-
-    /*It searches the array of tasks for one that matches, if it finds
-     it, change its value (true to false or false to true)*/
     const toggleTask = task=>
         setTaskItems(taskItems.map(t=>(t.name === task.name ? {...t, done: !t.done} : t )));
 
