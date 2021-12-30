@@ -22,7 +22,8 @@ function StudySession(){
 
     }
     const resetTimer = () =>{
-       
+        setPause(false);
+        setSessionLengthControl(25);
     }
     useEffect(()=>{
         
@@ -35,7 +36,7 @@ function StudySession(){
                     if(count >0){
                         count --;
                         setSessionLengthControl(count );
-                        console.log(count );
+                        
                     } 
                     else{
                         count  = sessionLength;
