@@ -1,49 +1,78 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 function StudySession(){
     const[sessionLength, setSessionLength] = useState(25);
+    const[sessionLengthControl, setSessionLengthControl] = useState(sessionLength);
     const[textButton, setTextButton] = useState('start');
-    
-    const startStudySession = ()=>{
-        setTextButton('pause');
-        let vamos = sessionLength;
-        setInterval(function(){
-            if(vamos>0){
-                vamos--;
-                setSessionLength(vamos);
-                console.log(vamos);
-            } 
-            else{
-                vamos = sessionLength;
-            }
-                    
-        },1000);
+    const [pause, setPause] = useState(null);
+    const[control,setControl] = useState(0);
+
+    const StartStudySession = ()=>{   
+        if(control===0){
+            setPause(true);
+            setTextButton('pause');
+            setControl(1);
+        }
+        else{
+            setPause(false);
+            setTextButton('start');
+            setControl(0);
+        }      
+
     }
+    const resetTimer = () =>{
+       
+    }
+    useEffect(()=>{
+        
+        let interval;
+        let count  = sessionLengthControl;
+        
+        if(pause){
+            interval =setInterval(function(){
+                    
+                    if(count >0){
+                        count --;
+                        setSessionLengthControl(count );
+                        console.log(count );
+                    } 
+                    else{
+                        count  = sessionLength;
+                    }                                      
+            },1000);   
+        }    
+        return ()=> clearInterval(interval);                      
+        
+    },[pause]);
+    
     return(   
         
         <div>
-            <h2>{sessionLength}</h2>
+            <h2>{sessionLengthControl}</h2>
             
             <button onClick={()=>{
                 if(sessionLength<60){
-                    setSessionLength(sessionLength+1)
+                    setSessionLength(sessionLength+1);
+                    setSessionLengthControl(sessionLength);
                 }}}>
                 +
             </button>           
             <button onClick={()=>{
                 if(sessionLength>10){
-                    setSessionLength(sessionLength-1)
+                    setSessionLength(sessionLength-1);
+                    setSessionLengthControl(sessionLength);
                 }}}>
                 -
             </button>
-            <button onClick={startStudySession}>{textButton}</button>
+            <button onClick={StartStudySession}>{textButton}</button>
+            <button onClick={resetTimer}>reset</button>
             
         </div>
-        
+            
 
     );
 
 }
-
+            
 export default StudySession;
