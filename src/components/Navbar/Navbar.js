@@ -1,14 +1,15 @@
-import React from 'react';
-import CalculatorButton from './CalculatorButton';
+import React, {useState} from 'react';
 import ThemeButton from './ThemeButton';
+import CalculatorModal from './CalculatorModal';
 
 function Navbar(){
+   
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <CalculatorButton className="Buttons"/>
                     <ThemeButton className="Buttons"/>
+                    <CalculatorModal/>
                 </div>
                 
             </nav>
