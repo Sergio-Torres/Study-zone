@@ -2,9 +2,7 @@
   --red: #f54e4e;
   --green: #4aec8c;
 }
-.body{
-  color: #30384b;
-}
+
 
 main{
   padding-top: 50px;
@@ -13,6 +11,8 @@ main{
   text-align: center;
 
 }
+
+
 
 button.Buttons{
   background-color: transparent;
@@ -38,6 +38,8 @@ button.with-text svg{
   margin-right: 5px;
 
 }
+
+
 
 .labelSettings{
   display: block;

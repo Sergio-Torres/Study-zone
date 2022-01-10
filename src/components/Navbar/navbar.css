@@ -1,0 +1,16 @@
+
+h1.title{
+    padding: 10px;
+    color: #fff;
+}
+
+nav ul{
+    display: flex;
+}
+nav ul li{
+    padding-inline: 10px;
+}
+nav button.Buttons{
+    color: rgb(54, 126, 233);
+    width: 60px;
+}
