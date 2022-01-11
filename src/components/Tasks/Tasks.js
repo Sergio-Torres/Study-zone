@@ -3,6 +3,7 @@ import {TaskRow} from './TaskRow';
 import {TaskBanner} from './TaskBanner';
 import {TaskCreator} from './TaskCreator';
 import {VisibilityControl} from './Control';
+import './task.css'
 
 function Tasks(){
 
@@ -58,44 +59,52 @@ function Tasks(){
     ));
     
     return(
-        <div>
-            <TaskBanner userName={userName} taskItems={taskItems}/>
-            <TaskCreator callback={createNewTask}/>
-            <table className="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Done</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {TaskTableRows(false)}        
-                </tbody>
-            </table>
-            
-            <div className="bg-secondary-text-white text-center p-2">
-                <VisibilityControl 
-                    description="Completed Tasks"
-                    isChecked={showCompleted}
-                    callback={checked=> setShowCompleted(checked)}
-                />
+        <div>           
+            <div className='task-banner'>
+                <TaskBanner userName={userName} taskItems={taskItems}/>
             </div>
-            {
-                showCompleted && (
-                    <table className="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Description</th>
-                                <th>Done</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {TaskTableRows(true)}
-                        </tbody>
-                    </table>
-                )        
-            }
+            <div className='content-task'>
+                <div className='task-creator'>
+                    <TaskCreator callback={createNewTask}/>
+                </div>
+                
+                <table className="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Done</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {TaskTableRows(false)}        
+                    </tbody>
+                </table>
+                
+                <div className="bg-secondary-text-white text-center p-2">
+                    <VisibilityControl 
+                        description="Completed Tasks"
+                        isChecked={showCompleted}
+                        callback={checked=> setShowCompleted(checked)}
+                    />
+                </div>
+                {
+                    showCompleted && (
+                        <table className="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Done</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {TaskTableRows(true)}
+                            </tbody>
+                        </table>
+                    )        
+                }
 
+            </div>         
+            
         </div>
     );
 }

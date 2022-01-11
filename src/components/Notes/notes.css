@@ -1,0 +1,32 @@
+.content-note{
+    margin: 1rem;
+}
+
+.notes-banner{
+    background-color: rgb(54, 126, 233);
+}
+
+.content-note button.with-text{
+    
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.content-note button.with-text svg{
+    width: 30px;
+}
+
+div.note-list{
+    background-color: rgb(173, 173, 173);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 30px;
+}
+
+.content-note .note-list button.Buttons{
+    width: 30px;
+    
+}
+

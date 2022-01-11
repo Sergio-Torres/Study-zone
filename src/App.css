@@ -1,35 +1,71 @@
 :root{
   --red: #f54e4e;
-  --green: #4aec8c;
+  --green: #26c264;
+}
+*{
+  margin: 0;
+  padding: 0; 
+
 }
 
 
-main{
-  padding-top: 50px;
-  max-width: 340px;
-  margin: 0 auto;
-  text-align: center;
+.container{
+  
+  background-color: #ddd;
+  margin: 1.2em auto;
+  border-radius: 16px;
+  border-bottom-left-radius: 40px;
+  width: 90%;
+  display: grid;
+  gap: 1.2em;
+  grid-template-columns: repeat(7, 1fr);
 
 }
 
+.container > div{
+  margin: 1.2em;
+  background-color: rgb(204, 204, 204);
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.container .tasks{
+    grid-column: span 5;
+    
+}
+.container .pomodoro-clock{
+  
+  grid-column: span 2;
+  max-height: 640px;
+  
+}
 
 
 button.Buttons{
+  
   background-color: transparent;
-  color: #30384b;
+  color: rgb(8, 43, 100);
   border: 0;
   display: inline-block;
-  width: 100px;
+  width: 80px;
 }
 
 button.with-text{
   width: auto;
-  background-color: #30384b;
+  background-color:rgb(54, 126, 233);
+  border: none;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 1.4rem;
   line-height: 36px;
   color: #fff;
+  transition: 0.5s;
+}
+
+button.with-text:hover{
+  background-color:rgb(8, 43, 100);
 }
 
 button.with-text svg{

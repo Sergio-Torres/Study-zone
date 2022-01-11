@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Settings from './Settings';
 import SettingsContext from './SettingsContext';
 import Timer from './Timer';
+import './pomodoroClock.css';
 
 function PomodoClock(){
     const [showSettings, setShowSettings] = useState(false);
@@ -10,7 +11,7 @@ function PomodoClock(){
 
     return(
         
-        <main>
+        <div className='clock'>
             <SettingsContext.Provider value={{
                 showSettings,
                 setShowSettings,
@@ -22,7 +23,7 @@ function PomodoClock(){
                 {showSettings ? <Settings/> : <Timer/>}
             </SettingsContext.Provider>
             
-        </main>
+        </div>
         
     );    
 }

@@ -7,19 +7,23 @@ function App() {
 
   return (
 
-      <div className="body">
-          <div>
-              <Navbar/>
-          </div>   
-          <div className="tasks">
-              <Tasks/>
-              <Notes/>
-          </div>
-          <div className='pomodoro-clock'>
-              <PomodoroClock/>
-          </div>
+        <div>
+            <header>
+                <Navbar/>
+            </header>   
+            <div className='container'>
+                
+                <div className="tasks">
+                    <Tasks/>
+                    <Notes className='notes'/>
+                </div>
+                
+                <div className='pomodoro-clock'>
+                    <PomodoroClock/>
+                </div>
                
-      </div>
+            </div>
+        </div>
       
   );
 }

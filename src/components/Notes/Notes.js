@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {NoteCreator} from './NoteCreator';
 import {NoteList} from './NoteList';
+import { NotesBanner } from './NotesBanner';
+import './notes.css';
 
 function Notes(){
     const[noteItems, setNotesItems] = useState([
-        {name: 'nota numero 1'}       
+        {name: 'Note example (mangoes are delicious)'}       
     ]);
 
     const createNewNote = noteName =>{
@@ -34,11 +36,15 @@ function Notes(){
 
     return(
         <div>
-            <NoteCreator callback={createNewNote}/>
-            <div>                
+            <div className='notes-banner'>
+                <NotesBanner/>
+            </div> 
+            <div className="content-note">
+                <NoteCreator callback={createNewNote}/>
                 <DisplayNoteList/> 
             </div>
         </div>
+        
     );
 
 }
