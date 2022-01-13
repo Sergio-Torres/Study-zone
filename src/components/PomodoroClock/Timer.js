@@ -74,7 +74,7 @@ function Timer(){
             <CircularProgressbar value={percentage} 
                 text={minutes + ':' + seconds} 
                 styles={buildStyles({
-                    textColor: '#30384b',
+                    textColor: '#f28446',
                     pathColor: mode === 'work' ? red : green,
                     trailColor: 'rgba(125,125,125, .2)',
             })}/>

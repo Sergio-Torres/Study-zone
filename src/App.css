@@ -11,7 +11,6 @@
 
 .container{
   
-  background-color: #ddd;
   margin: 1.2em auto;
   border-radius: 16px;
   border-bottom-left-radius: 40px;
@@ -24,7 +23,6 @@
 
 .container > div{
   margin: 1.2em;
-  background-color: rgb(204, 204, 204);
   border-bottom-right-radius: 18px;
   border-top-left-radius: 18px;
   border-bottom-left-radius: 40px;
@@ -64,9 +62,6 @@ button.with-text{
   transition: 0.5s;
 }
 
-button.with-text:hover{
-  background-color:rgb(8, 43, 100);
-}
 
 button.with-text svg{
   width: 36px;
