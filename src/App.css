@@ -8,7 +8,6 @@
 
 }
 
-
 .container{
   
   margin: 1.2em auto;
@@ -40,7 +39,6 @@
   
 }
 
-
 button.Buttons{
   
   background-color: transparent;
@@ -70,12 +68,12 @@ button.with-text svg{
 
 }
 
-
-
 .labelSettings{
   display: block;
   margin-bottom: 10px;
   margin-top: 20px;
   text-transform: capitalize;
 }
+
+
 

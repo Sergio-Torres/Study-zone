@@ -24,6 +24,26 @@ const GlobalStyles = createGlobalStyle`
     .container .pomodoro-clock{
         background-color: ${props => props.theme.containerDivs}
     }
+    //responsive
+    @media screen and (max-width: 1000px){
+        .container .tasks{
+            grid-column: span 4;
+            
+        }
+        .container .pomodoro-clock{
+            grid-column: span 3;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .container .tasks{
+            grid-column: 1/-1;
+            
+        }
+        .container .pomodoro-clock{
+            grid-column: 1/-1;
+        }
+    }
 
 `;
 const StyledApp = styled.div`
