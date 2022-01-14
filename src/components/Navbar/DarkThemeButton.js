@@ -1,7 +1,5 @@
-import react, {useState} from 'react';
 
-
-function ThemeButton(props){
+function DarkThemeButton(props){
     
     return(
         <button {...props} >
@@ -11,4 +9,4 @@ function ThemeButton(props){
         </button>
     );
 }
-export default ThemeButton;
+export default DarkThemeButton;

@@ -7,7 +7,7 @@ import './task.css'
 
 function Tasks(){
 
-    const[userName, setUserName]=useState('sergio');
+    const[userName, setUserName]=useState('Sergio');
     const[taskItems, setTaskItems] = useState([]);
     
     const [showCompleted, setShowCompleted] = useState(true);

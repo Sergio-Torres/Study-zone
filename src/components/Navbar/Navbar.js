@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
-import ThemeButton from './ThemeButton';
+import DarkThemeButton from './DarkThemeButton';
+import LightThemeButton from './LightThemeButton';
 import CalculatorModal from './CalculatorModal';
 import './navbar.css';
 
-function Navbar(){
+function Navbar(props){
+
+    const [valor, setValor] = useState(true);
+    const [themeToggleButton, setThemeToggleButton] = useState(true);
+
    
     return(
         <div>
@@ -16,12 +21,27 @@ function Navbar(){
                             <CalculatorModal/>
                         </li>
                         <li>
-                            <ThemeButton className="Buttons"/> 
+                            {themeToggleButton
+                                ?
+                                <DarkThemeButton className="Buttons"
+                                onClick={()=>{
+                                    props.themeToggler(true)
+                                    setThemeToggleButton(false)
+                                }}
+                                />:
+                                <LightThemeButton className="Buttons"
+                                
+                                onClick={()=>{
+                                    props.themeToggler(false)
+                                    setThemeToggleButton(true)
+                                }}
+                                />
+                            }
+             
                         </li>
+                        
                     </ul>
-                                       
                 </div>
-                
             </nav>
         </div>
     );

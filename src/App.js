@@ -4,7 +4,7 @@ import './App.css';
 import styled,{ ThemeProvider } from 'styled-components';
 import { createGlobalStyle } from "styled-components";
 import {lightTheme, darkTheme} from './theme.js';
-import ThemeButton from './components/Navbar/ThemeButton';
+
 
 import Tasks from './components/Tasks/Tasks';
 import Notes  from './components/Notes/Notes';
@@ -53,18 +53,19 @@ const StyledApp = styled.div`
 
 function App() {
     const [theme, setTheme] = useState("light");
-    //console.log('themeApp ', toggle)
-    const themeToggler = () =>{
-        theme === 'light' ? setTheme('dark') : setTheme('light');
+
+    const themeToggler = (props) =>{
+        props === true ? setTheme('dark') : setTheme('light');
     }
 
-  return (
+    return (
+        
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <GlobalStyles/>
             <StyledApp>
                 <div>
                     <header>
-                        <Navbar/>
+                        <Navbar themeToggler={themeToggler}/>
                     </header>   
                     <div className='container'>
                         <div className="tasks">
@@ -77,9 +78,7 @@ function App() {
                         </div>
                      </div>
                 </div>
-                <button className="boton" onClick={()=>themeToggler()}>Cambiar thema</button>
             </StyledApp>
-        
         </ThemeProvider>
       
   );
