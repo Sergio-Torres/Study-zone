@@ -1,3 +1,4 @@
+// Dark theme and light theme
 
 export const lightTheme = {
     body: '#fff',

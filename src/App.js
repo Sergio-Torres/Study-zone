@@ -10,6 +10,7 @@ import Tasks from './components/Tasks/Tasks';
 import Notes  from './components/Notes/Notes';
 import PomodoroClock from './components/PomodoroClock/PomodoroClock';
 import Navbar from './components/Navbar/Navbar';
+import ContactMe from './components/ContactMe/ContactMe';
 
 const GlobalStyles = createGlobalStyle`
     body{
@@ -97,6 +98,9 @@ function App() {
                             <PomodoroClock/>
                         </div>
                      </div>
+                     <footer>
+                         <ContactMe/>
+                     </footer>
                 </div>
             </StyledApp>
         </ThemeProvider>

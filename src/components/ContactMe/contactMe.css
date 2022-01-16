@@ -1,0 +1,20 @@
+.contact-me{
+    background-color: transparent;
+}
+.contact-me ul{
+    list-style: none;
+    display: flex;
+    flex: 1;
+    float: right;
+}
+
+.contact-me li{
+    margin: 10px;
+}
+
+.contact-me button{
+    background-color: transparent;
+    border:none;
+
+    
+}
