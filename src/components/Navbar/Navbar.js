@@ -6,10 +6,8 @@ import './navbar.css';
 
 function Navbar(props){
 
-    const [valor, setValor] = useState(true);
     const [themeToggleButton, setThemeToggleButton] = useState(true);
 
-   
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,9 +35,7 @@ function Navbar(props){
                                 }}
                                 />
                             }
-             
                         </li>
-                        
                     </ul>
                 </div>
             </nav>

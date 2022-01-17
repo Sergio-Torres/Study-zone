@@ -3,22 +3,23 @@ import {TaskRow} from './TaskRow';
 import {TaskBanner} from './TaskBanner';
 import {TaskCreator} from './TaskCreator';
 import {VisibilityControl} from './Control';
+
 import './task.css'
 
 function Tasks(){
 
-    const[userName, setUserName]=useState('Sergio');
     const[taskItems, setTaskItems] = useState([]);
     
     const [showCompleted, setShowCompleted] = useState(true);
     
     useEffect(()=>{
-        let data = localStorage.getItem('tasks');
-        if(data != null){
-            setTaskItems(JSON.parse(data));
+        let taskData = localStorage.getItem('tasks');
+        
+        if(taskData != null){
+            setTaskItems(JSON.parse(taskData));
         }
         else{
-            setUserName('Sergio Local')
+
             setTaskItems([
                 {name: 'Task Example', done: false}
             ])
@@ -30,7 +31,7 @@ function Tasks(){
     useEffect(()=>{
         localStorage.setItem('tasks', JSON.stringify(taskItems));
     },[taskItems]);
-
+     
     const createNewTask = taskName =>{   
         if(!taskItems.find(t=>t.name ===taskName)){
             setTaskItems([...taskItems, {name: taskName, done: false}])
@@ -59,9 +60,9 @@ function Tasks(){
     ));
     
     return(
-        <div>           
+        <div> 
             <div className='task-banner'>
-                <TaskBanner userName={userName} taskItems={taskItems}/>
+                <TaskBanner taskItems={taskItems}/>
             </div>
             <div className='content-task'>
                 <div className='task-creator'>
